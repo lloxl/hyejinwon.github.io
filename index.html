@@ -47,7 +47,13 @@
 
 
 
-
+    <head>
+        <meta property="og:title" content="Hyejinwon Getting married">
+        <meta property="og:description" content="여기를 눌러 링크를 확인하세요.">
+        <meta property="og:image" content="https://lloxl.github.io/hyejinwon.github.io/img/kakako.jpg">
+        <meta property="og:url" content="https://lloxl.github.io/hyejinwon.github.io/">
+        <meta property="og:type" content="website">
+    </head>
 
 </head>
 
@@ -61,6 +67,10 @@
 
                 <div class="mcard_intro">
                     <div class="image-wrap">
+                        <!-- MP4 -->
+                        <video autoplay muted playsinline id="loading-video" preload="auto">
+                            <source src="./img/main_mobile.mp4" type="video/mp4">
+                        </video>
 
                         <!-- JPG -->
                         <img id="final-img" src="./img/MAIN3.jpg" alt="메인 웨딩 사진">
@@ -554,6 +564,7 @@
                                             position: new naver.maps.LatLng(37.560246, 126.839387),
                                             map: map
                                         })
+
                                     </script>
                                 </div>
 
@@ -900,7 +911,14 @@
                     </div>
 
                     <!-- 카톡 공유 버튼 -->
-                    <div class="btn-wrap">            
+                    <div class="btn-wrap">
+                        <!-- 카카오톡 공유하기 버튼 -->
+
+
+                        <button id="kakao-link-btn" onclick="shareKakao()" class="btn fade-in-section">
+                            <span>카카오톡 공유하기</span>
+                            <i class="fa-solid fa-comment"></i>
+                        </button>
 
                         <!-- 주소 복사 버튼 -->
                         <button id="copy-link-btn" class="btn fade-in-section">
@@ -943,6 +961,7 @@
                 window.scrollTo(0, 0);
             }
         });
+
     </script>
 
 
@@ -1027,6 +1046,7 @@
                 toast.classList.remove('show');
             }, 1500);
         }
+
     </script>
 
 
@@ -1091,6 +1111,7 @@
                 if (!modalInner.contains(e.target)) closeModal();
             });
         });
+
     </script>
 
 
@@ -1121,6 +1142,7 @@
 
         setInterval(updateCountdown, 1000);
         updateCountdown();
+
     </script>
 
 
@@ -1135,6 +1157,7 @@
         function showAudioBtn() {
             if (audioBtn) audioBtn.style.display = "block";
         }
+
     </script>
 
     <script>
@@ -1281,6 +1304,7 @@
         modal.addEventListener('click', e => {
             if (e.target === modal) closeGalleryModal();
         });
+
     </script>
 
 
@@ -1330,6 +1354,7 @@
                 }
             });
         });
+
     </script>
 
     <script>
@@ -1357,6 +1382,7 @@
 
             faders.forEach(el => observer.observe(el));
         });
+
     </script>
 
 
@@ -1409,6 +1435,7 @@
                 observer.observe(jinwon);
             }
         });
+
     </script>
 
 
@@ -1434,6 +1461,48 @@
         window.addEventListener('gesturestart', function(e) {
             e.preventDefault();
         });
+
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const video = document.getElementById('loading-video');
+            const finalImg = document.getElementById('final-img');
+
+            // 스크롤 잠금
+            document.body.classList.add('video-no-scroll');
+
+            function showFinalImage() {
+                video.style.opacity = 0;
+                finalImg.style.opacity = 1;
+
+                if (finalImg.complete) {
+                    document.body.classList.remove('video-no-scroll');
+                } else {
+                    finalImg.onload = () => {
+                        document.body.classList.remove('video-no-scroll');
+                    };
+                }
+            }
+
+            // 비디오 재생
+            video.play().catch(() => {
+                console.log('Autoplay blocked, showing image immediately.');
+                showFinalImage();
+                if (typeof window.showAudioButton === "function") {
+                    window.showAudioButton();
+                }
+            });
+
+            // 비디오 끝나면 이미지 전환 + 오디오 버튼
+            video.addEventListener('ended', () => {
+                showFinalImage();
+                if (typeof window.showAudioButton === "function") {
+                    window.showAudioButton();
+                }
+            });
+        });
+
     </script>
 
     <script>
@@ -1441,7 +1510,13 @@
             const audioBtn = document.getElementById("audio-btn");
             const audio = new Audio("./bgm/audio1.mp3");
             let isPlaying = false;
-            audioBtn.classList.add("visible");
+
+            // 오디오 버튼 등장 함수
+            window.showAudioButton = function() {
+                audioBtn.classList.add("visible"); // fade-in
+            };
+
+            // 🎵 PC: 자동재생 시도
             audio.play().then(() => {
                 isPlaying = true;
                 audioBtn.src = "./img/audio-off.png";
@@ -1449,15 +1524,18 @@
                 console.log("모바일 자동재생 차단, 첫 제스처에서 재생");
             });
 
+            // 🎵 모바일: 첫 사용자 제스처에서 오디오 실행
             function initAudio() {
                 audio.play().then(() => {
                     isPlaying = true;
                     audioBtn.src = "./img/audio-off.png";
                 }).catch(err => console.log("재생 실패:", err));
+
                 document.removeEventListener("touchstart", initAudio);
                 document.removeEventListener("click", initAudio);
                 document.removeEventListener("scroll", initAudio);
             }
+
             document.addEventListener("touchstart", initAudio, {
                 once: true
             });
@@ -1467,16 +1545,20 @@
             document.addEventListener("scroll", initAudio, {
                 once: true
             });
+
+            // 🎵 버튼 클릭으로 오디오 토글
             audioBtn.addEventListener("click", () => {
                 if (isPlaying) {
                     audio.pause();
-                    audioBtn.src = "./img/audio.png";
+                    audioBtn.src = "./img/audio.png"; // 꺼진 아이콘
                 } else {
                     audio.play().catch(err => console.log("재생 실패:", err));
-                    audioBtn.src = "./img/audio-off.png";
+                    audioBtn.src = "./img/audio-off.png"; // 켜진 아이콘
                 }
                 isPlaying = !isPlaying;
             });
+
+            // 🎵 모달 관련: Contact / Gallery 모달 열리면 버튼 숨기기, 닫히면 다시 보이기
             const contactModal = document.getElementById("contactModal");
             const galleryModal = document.getElementById("galleryModal");
 
@@ -1487,17 +1569,55 @@
             function showAudioBtn() {
                 audioBtn.style.display = "block";
             }
+
+            // Contact Modal
             if (contactModal) {
                 contactModal.addEventListener('show.bs.modal', hideAudioBtn);
                 contactModal.addEventListener('hidden.bs.modal', showAudioBtn);
             }
+
+            // Gallery Modal
             if (galleryModal) {
                 galleryModal.addEventListener('show.bs.modal', hideAudioBtn);
                 galleryModal.addEventListener('hidden.bs.modal', showAudioBtn);
             }
         });
+
     </script>
 
+
+
+
+    <script>
+        // 카카오 SDK 초기화 (JavaScript 키 넣기)
+        Kakao.init("022ee8dcff508f0805b9a5fb2ebfdcc4");
+        console.log(Kakao.isInitialized()); // true 떠야 정상
+
+        function shareKakao() {
+            Kakao.Share.sendDefault({
+                objectType: 'feed',
+                content: {
+                    title: '윤진원 & 신혜지, 결혼합니다',
+                    description: '2025.11.15 토요일 오후 5:40 \nTHE VENUEG SEOUL 네이처홀',
+                    imageUrl: 'https://www.hyejinwon.com/img/kakako.jpg',
+                    imageWidth: 600,
+                    imageHeight: 400,
+                    link: {
+                        mobileWebUrl: 'https://www.hyejinwon.com/',
+                        webUrl: 'https://www.hyejinwon.com/'
+                    }
+                },
+                buttons: [{
+                    title: '청첩장 보기',
+                    link: {
+                        mobileWebUrl: 'https://www.hyejinwon.com/',
+                        webUrl: 'https://www.hyejinwon.com/'
+                    }
+                }]
+            });
+        }
+
+    </script>
 
     <!-- 주소복사 -->
     <!-- location부분 주소 누르면 복사 -->
@@ -1551,6 +1671,7 @@
             toast.classList.add("show");
             setTimeout(() => toast.classList.remove("show"), 1500);
         }
+
     </script>
 
     <!-- 확대 방지 -->
@@ -1566,6 +1687,7 @@
         document.addEventListener('gesturestart', function(event) {
             event.preventDefault(); // iOS 확대 방지
         });
+
     </script>
 
 
@@ -1573,4 +1695,6 @@
 
     <div id="copy-toast" class="copy-toast">복사되었습니다!</div> <!-- 복사 알림 -->
 
-</body></html>
+</body>
+
+</html>
