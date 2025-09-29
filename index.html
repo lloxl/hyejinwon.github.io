@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Hyejinwon Getting married</title>
+    <link rel="stylesheet" href="style.css?v=1234">
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- fade 효과 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!--font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+
+
+
+
+    <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=3r7ib4c1ob"></script>
+    <script src="https://kit.fontawesome.com/70e0dc75f1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="javascript.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 카톡 공유 -->
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+    <style>
+
+
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="mcard_view">
+            <div class="card_inner">
+
+
+
+                <div class="mcard_intro">
+                    <div class="image-wrap">
+
+                        <!-- JPG -->
+                        <img id="final-img" src="./img/MAIN3.jpg" alt="메인 웨딩 사진">
+
+                        <!-- 오디오 토글 버튼 (HTML에 고정) -->
+                        <img id="audio-btn" src="./img/audio.png" alt="오디오 버튼">
+                    </div>
+                </div>
+
+                <audio id="bg-audio" src="./bgm/audio1.mp3" loop autoplay muted playsinline></audio>
+
+
+
+
+
+                <div class="invitation-wrap">
+                    <div class="invi_title fade-in-section">
+                        <div>
+                            INVITATION
+                        </div>
+
+                    </div>
+
+                    <div class="text center fade-in-section">
+                        <span>"너를 빼고 나면 아무것도 기억할 수 없어."</span> <br>
+                        <span>- 영화 '이터널 선샤인' 중</span><br>
+                        <br>
+                        함께하는 9번째 가을, <br>
+                        <br>
+                        저희의 서약이 더 진중해 질 수 있도록
+                        <br>
+                        함께 자리하여 축복해주시면 감사하겠습니다. <br>
+                    </div>
+
+                    <div class="parents-wrap fade-in-section">
+                        <div class="groom">
+
+                            <div class="groom-bold">Groom</div>
+                            <span>
+                                <span class="groom-p">
+                                    윤평수
+                                    <span> · </span>
+                                </span>
+                                <span class="groom-p">
+                                    박은하
+                                </span>
+                            </span>
+
+                            <span class="relation">
+                                <span>의</span>
+                                <span>아들</span>
+                            </span>
+
+                            <span groom class="name">진원</span>
+                        </div>
+                        <div class="bride">
+                            <div class="bride-bold">Bride</div>
+                            <span>
+                                <span class="bride-p">
+                                    신연규
+                                    <span> · </span>
+                                </span>
+                                <span class="bride-p">
+                                    윤용인
+                                </span>
+                            </span>
+
+                            <span class="relation">
+                                <span>의</span>
+                                <span>딸</span>
+                            </span>
+
+                            <span bride class="name">혜지</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-wrap fade-in-section">
+                        <div class="contact-button" onclick="openModal()">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>연락하기</span>
+                        </div>
+                    </div>
+
+                    <!-- 모달 -->
+                    <div id="contactModal" class="modal">
+                        <div class="modal-content01">
+                            <span class="close" onclick="closeModal()"><i class="fas fa-times"></i></span>
+                            <div class="modal-title01">
+                                축하 연락하기<br>
+                                <div class="small">직접 축하의 마음을 전해보세요</div>
+                            </div>
+
+
+                            <div class="tab-wrap">
+                                <div class="tabs">
+                                    <span class="active" data-target="groom">신랑에게</span>
+                                    <span data-target="bride">신부에게</span>
+                                </div>
+                            </div>
+
+                            <div class="contact-groom active">
+
+
+                                <div class="modal-body">
+                                    <div class="contact-card">
+                                        <div class="name-role">윤진원</div>
+                                        <div class="btn-group">
+                                            <a href="sms:01071746708" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01071746708" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-card">
+                                        <div class="name-role">
+                                            <span>윤평수</span>
+                                            <span class="relation">아버지</span>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="sms:01040296708" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01040296708" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-card">
+                                        <div class="name-role">
+                                            <span>박은하</span>
+                                            <span class="relation">어머니</span>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="sms:01088036708" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01088036708" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-bride">
+
+
+
+                                <div class="modal-body">
+                                    <div class="contact-card">
+                                        <div class="name-role">신혜지</div>
+                                        <div class="btn-group">
+                                            <a href="sms:01048156490" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01048156490" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-card">
+                                        <div class="name-role">
+                                            <span>신연규</span>
+                                            <span class="relation">아버지</span>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="sms:01077402840" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01077402840" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="contact-card">
+                                        <div class="name-role">
+                                            <span>윤용인</span>
+                                            <span class="relation">어머니</span>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a href="sms:01051922840" class="call-btn">
+                                                <i class="fas fa-envelope"></i> 문자 보내기
+                                            </a>
+                                            <a href="tel:01051922840" class="sms-btn">
+                                                <i class="fas fa-phone"></i> 전화하기
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="save_the_date-wrap">
+
+                    <div class="invi_title_save fade-in-section">
+                        <div style="color: #ea6376">
+                            SAVE THE DATE
+                        </div>
+
+                    </div>
+
+                    <div class="save_bold fade-in-section">2025.11.15 SAT 05:40PM</div>
+                    <div class="save fade-in-section">더 베뉴지 서울 네이처홀</div>
+                    <div class="save fade-in-section">서울특별시 강서구 등촌제3동 강서로 388</div>
+
+                    <div> <img src="./img/envelope.png" class="save_img fade-in-section"> </div>
+
+                </div>
+
+
+
+
+
+                <div class="introduce-wrap">
+
+                    <img src="./img/line1.gif" class="line-bg" alt="line gif">
+
+                    <div class="invi_title fade-in-section"> ABOUT US </div>
+
+                    <div class="couple-section">
+                        <div class="couple-card fade-in-section">
+                            <div class="bride">Bride</div>
+                            <img class="left-img card-img" src="./img/hye1.png" style="width: 90%; height: auto;">
+                            <div class="introduce hyeji">
+                                <span>혜지</span> <br> 1997년 8월 서울 출생
+                                <div class="name"> 따뜻한 마음과 예쁜 미소로 <br>주변을 환하게 비추는 혜지는 <br>
+                                    웃음이 많아 함께 있으면 <br> 자연스럽게 행복을 느끼게 해줘요</div>
+                            </div>
+
+                        </div>
+
+                        <div class="couple-card fade-in-section">
+                            <div class="groom">Groom</div>
+                            <img src="./img/jin1.png" class="right-img card-img" style="width: 90%; height: auto;">
+
+                            <div class="introduce jinwon fade-in-section">
+                                <span>진원</span> <br> 1997년 7월 대전 출생
+                                <div class="name"> 어떠한 말보다 행동으로 <br> 사랑을 보여주는 진원이는<br> 세월의 흐름 속에서도 <br> 변함없이 깊어지는 마음을 줘요 </div>
+                            </div>
+
+                        </div>
+
+                        <div class="met-wrap">
+                            <img class="img fade-in-section" src="./img/met.png">
+
+                            <div class="tie-text fade-in-section"> 두 사람이 만나 <span> 하나의 매듭 </span> 이 되고 <br> <span> 하나의 길 </span>이 되어 <span>하나의 보금자리 </span>를 이루려 합니다. </div>
+                            <div class="text fade-in-section"> Finally tied the knot </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+                <div>
+                    <div class="calendar-wrap">
+
+                        <div class="calendar-inner">
+                            <div class="title">
+                                <div class="date_kr fade-in-section"> 2025년 11월 15일 토요일 <span class="dateline"></span> 오후 5시 40분 </div>
+                                <div class="date_en fade-in-section"> NOVEMBER 15, 2025 <span class="dateline"></span> 05:40 PM </div>
+
+
+                            </div>
+                            <div class="c-calendar">
+                                <table cellspacing="0" class="c-calendar-table">
+                                    <thead class="fade-in-section">
+                                        <tr>
+                                            <th>일</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                            <th>토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="fade-in-section">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr class="fade-in-section">
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                        </tr>
+                                        <tr class="fade-in-section">
+                                            <td>9</td>
+                                            <td>10</td>
+                                            <td>11</td>
+                                            <td>12</td>
+                                            <td>13</td>
+                                            <td>14</td>
+                                            <td class="wedding">
+                                                <div class="c-calendar-wedding_day">
+                                                    <div class="heart">
+                                                        <div class="d-day">15</div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr class="fade-in-section">
+                                            <td>16</td>
+                                            <td>17</td>
+                                            <td>18</td>
+                                            <td>19</td>
+                                            <td>20</td>
+                                            <td>21</td>
+                                            <td>22</td>
+                                        </tr>
+                                        <tr class="fade-in-section">
+                                            <td>23</td>
+                                            <td>24</td>
+                                            <td>25</td>
+                                            <td>26</td>
+                                            <td>27</td>
+                                            <td>28</td>
+                                            <td>29</td>
+                                        </tr>
+                                        <tr class="fade-in-section">
+                                            <td>30</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- ✅ Countdown Timer -->
+                            <div class="countdown">
+                                <div class="timer-inline fade-in-section">
+                                    <div class="timer-item">
+                                        <div class="label">DAYS</div>
+                                        <div class="value" id="days">00</div>
+                                    </div>
+                                    <div class="colon">:</div>
+                                    <div class="timer-item">
+                                        <div class="label">HOUR</div>
+                                        <div class="value" id="hours">00</div>
+                                    </div>
+                                    <div class="colon">:</div>
+                                    <div class="timer-item">
+                                        <div class="label">MIN</div>
+                                        <div class="value" id="minutes">00</div>
+                                    </div>
+                                    <div class="colon">:</div>
+                                    <div class="timer-item">
+                                        <div class="label">SEC</div>
+                                        <div class="value" id="seconds">00</div>
+                                    </div>
+                                </div>
+                                <p class="message fade-in-section">
+                                    진원 <span class="heart">♥</span> 혜지의 결혼식이 <span id="daysLeft">00</span>일 남았습니다.
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-wrap">
+                    <div class="invi_title fade-in-section"> GALLERY </div>
+                    <div id="galleryGrid" class="gallery-grid fade-in-section"></div>
+                    <div class="show-more-btn fade-in-section" id="showMoreBtn">
+                        <i class="fa-solid fa-chevron-down "></i> <br> 사진 더 보기
+                    </div>
+                </div>
+
+                <!-- 모달 -->
+                <div class="modal-overlay" id="galleryModal">
+                    <div class="modal-content">
+
+
+                        <div class="up">
+                            <!-- 사진 순서 표시 -->
+                            <div class="image-counter" id="imageCounter"></div>
+
+                            <!-- 닫기 버튼 -->
+                            <button class="close-btn" onclick="closeGalleryModal()">
+                                ✕
+                            </button>
+                        </div>
+
+                        <!-- 이전 버튼 -->
+                        <button class="nav-btn prev-btn" onclick="showGalleryPrev()">
+                            <img src="img/undo.png" class="btn-icon">
+                        </button>
+
+                        <!-- 모달 이미지 -->
+                        <img id="gallery-modal-image" src="" />
+
+                        <!-- 다음 버튼 -->
+                        <button class="nav-btn next-btn" onclick="showGalleryNext()"><img src="img/next.png" class="btn-icon">
+                        </button>
+
+                    </div>
+                </div>
+
+
+
+                <!-- 
+                <div class="date-wrap" id="dateWrap">
+                    <div class="date">
+                        <span class="line first">November 15</span>
+                        <span class="line second">2025</span>
+                    </div>
+                </div>
+
+                <section style="background:#f5f5f5;"></section> -->
+
+
+
+
+
+                <div class="date-wrap" id="dateWrap">
+                    <!-- ✅ 배경 이미지 -->
+                    <img src="./img/photo14.jpg" alt="" class="bg-img">
+
+                    <div class="overlay"></div> <!-- ✅ 검정색 오버레이 -->
+
+                    <!-- 날짜 텍스트 -->
+                    <div class="date">
+                        <span class="line first" style=" font-family: 'fabulous';">November 15</span>
+                        <span class="line second" style=" font-family: 'fabulous';">2025</span>
+                    </div>
+                </div>
+
+
+                <div class="map-wrap">
+                    <div>
+                        <div>
+                            <div class="location-wrap fade-in-section">
+                                <div class="invi_title fade-in-section"> LOCATION </div>
+                                <div class="location-hall fade-in-section">
+                                    <div> THE VENUEG SOUL 네이처홀 </div>
+                                </div>
+                                <div class="location-address fade-in-section address-copy">
+                                    <div class="address-text"> 서울특별시 강서구 등촌제3동 강서로 388 </div>
+                                    <i class="fa-solid fa-copy"></i>
+                                </div>
+                            </div>
+
+                            <div class="map-inner fade-in">
+
+                                <div class="fade-in-section">
+                                    <div id="map" style="position: relative; overflow: hidden; background: rgb(248, 249, 250);"></div>
+
+                                    <script>
+                                        var mapOptions = {
+                                            center: new naver.maps.LatLng(37.560246, 126.839387),
+                                            zoom: 17.4,
+                                            minZoom: 10,
+                                        };
+
+                                        var map = new naver.maps.Map('map', mapOptions);
+                                        var marker = new naver.maps.Marker({
+                                            position: new naver.maps.LatLng(37.560246, 126.839387),
+                                            map: map
+                                        })
+                                    </script>
+                                </div>
+
+                                <div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="waytocome-wrap">
+
+                            <!-- 지하철 -->
+                            <div class="box fade-in-section">
+
+                                <div class="wayhow">
+                                    <div class="title">
+                                        <i class="fas fa-train-subway ricon icon-back"></i>
+                                        <span>지하철</span>
+
+                                    </div>
+                                    <div class="content">
+
+                                        <div>(5호선) <span class="wh_bold" style="color: #A05EB5">발산역 3번 출구</span> → 도보 1분</div>
+
+                                        <div>(9호선) <span class="wh_bold" style="color: #8C8279">양천향교역 6번 출구</span> → 도보 10분</div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- 버스 -->
+                            <div class="box fade-in-section">
+
+                                <div class="wayhow fade-in-section">
+                                    <div class="title">
+                                        <i class="fas fa-bus ricon icon-back"></i>
+                                        <span>버스</span>
+
+                                    </div>
+
+
+                                    <div class="content">
+                                        <div class="wh_bold">발산역 정류장</div>
+
+
+
+                                        <div class="row">
+                                            <div class="bus-type-plain">일반버스</div>
+                                            <div>60, 60-3, 88, 1002</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bus-type-ji">지선버스</div>
+                                            <div>6630, 6632, 6642, 6645, 6648, 6657, 6712</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bus-type-gan">간선버스</div>
+                                            <div>601, 605, 652, 654, 661</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bus-type-gon">공항버스</div>
+                                            <div>6003</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="bus-type-jik">직행버스</div>
+                                            <div>3000, 8000</div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 자가용 -->
+                            <div class="box">
+
+                                <div class="wayhow fade-in-section">
+
+                                    <div class="title">
+                                        <i class="fas fa-car ricon icon-back"></i>
+                                        <span>자가용</span>
+
+                                    </div>
+
+
+                                    <div class="content">
+
+                                        <div class="row">
+                                            <div class="wh_bold">네비게이션</div>
+                                            <div>"더베뉴지서울" 입력</div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="wh_bold">주소 검색</div>
+                                            <div>"서울특별시 강서구 강서로 388" <br>또는 "서울 강서구 등촌동 678-14" 입력</div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 주차장 -->
+                            <div class="box">
+
+                                <div class="wayhow fade-in-section">
+
+                                    <div class="title">
+                                        <i class="fas fa-square-parking icon-back"></i>
+                                        <span>주차</span>
+
+                                    </div>
+
+                                    <div class="content">
+                                        <div class="wh_bold">건물 주차장 이용 가능</div>
+                                        <div>하객 주차 2시간 무료</div>
+                                        <div>2시간 초과시 10분당 1,000원</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="event-wrap ">
+
+                    <div class="invi_title_event fade-in-section" style="color: #ea6376"> EVENT </div>
+
+                    <div class="title fade-in-section">
+                        <div class="save_bold" style="color: #fff">편지 스테이션</div>
+                        <div class="s-subtitle-con" style="color: #fff">Letter Station</div>
+                    </div>
+
+                    <div class="paper-container">
+                        <div class="paper-wrap">
+
+                            <!-- <img src="./img/paper.png1" class="paper"> -->
+
+                            <div class="paper-text fade-in-section">
+                                저희 두 사람의 <span> 소중한 날 </span>을<br>
+                                함께해주시는 하객 분들을 위해 <br>
+                                짧은 마음을 남길 수 있는 <br>
+                                <span>편지 스테이션</span>을 준비했습니다. <br>
+                                <div style="height: 1rem"> </div>
+                                <span>따뜻한 마음</span>과 <span>축복의 말씀</span>을 <br>
+                                남겨주신다면,<br>
+                                새로운 시작을 밝히는<br>
+                                가장 따뜻한 선물이 될 것 같습니다.<br>
+
+
+                                <div class="event-card-wrap ">
+
+                                    <img src="img/note2.png" alt="배경" class="bg-img">
+                                    <div class="info-wrap">
+
+                                        <img src="./img/card1.png" class="card fade-in-section">
+                                        <div class="chui fade-in-section">
+                                            카드는 결혼식장에서 공개됩니다!
+                                        </div>
+                                        <div class="card-info fade-in-section">
+                                            다양한 카드가 준비되어 있으니,<br>
+                                            마음에 드는 카드를 골라 따뜻한 마음을 전해주세요. <br>
+                                            <div class="tip">결혼 축하 멘트, 꿀팁, 잊지 못할 추억까지! </div> <br>
+
+                                            자유롭게 적어주세요
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+                <div>
+                    <div class="account-wrap">
+
+                        <div class="chick fade-in-section">
+                        </div>
+                        <div class="s-subtitle fade-in-section">
+                            <div class="s-subtitle-title"> 마음 전하실 곳</div>
+                            <div class="s-subtitle-con"> 참석이 어려우신 분들을 위해 <br> 계좌번호를 안내드립니다. <br> 너그러이 양해 부탁드립니다. </div>
+
+                        </div>
+                        <div class="c-account">
+
+                            <div class="account-wrap-r">
+                                <ul>
+                                    <li class="account_number_li fade-in-section">
+                                        <a href="javascript:void(0);" class="open-account_number li-a">
+                                            <div class="title title_inner">
+                                                <span>신랑측 계좌번호</span>
+                                                <span class="arrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="number-wrap">
+                                            <div class="inner">
+                                                <div class="account-item">
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 윤진원</span>
+                                                        <span class="relation"> 신랑 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">기업</span>
+                                                            <span class="account-number">49704385901018</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="account-item">
+
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 윤평수</span>
+                                                        <span class="relation"> 신랑 아버지 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">국민</span>
+                                                            <span class="account-number">73280196204893</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+
+                                                <div class="account-item">
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 박은하</span>
+                                                        <span class="relation"> 신랑 어머니 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">농협</span>
+                                                            <span class="account-number">40104956022313</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+
+
+
+
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="account_number_li fade-in-section">
+                                        <a href="javascript:void(0);" class="open-account_number li-a">
+                                            <div class="title title_inner">
+                                                <span>신부측 계좌번호</span>
+                                                <span class="arrow">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M19 9l-7 7-7-7">
+                                                        </path>
+                                                    </svg>
+                                                </span>
+                                            </div>
+                                        </a>
+                                        <div class="number-wrap">
+                                            <div class="inner">
+                                                <div class="account-item">
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 신혜지</span>
+                                                        <span class="relation"> 신부 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">신한</span>
+                                                            <span class="account-number">110513813807</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="account-item">
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 신연규</span>
+                                                        <span class="relation"> 신부 아버지 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">농협</span>
+                                                            <span class="account-number">52012110817</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+                                                <hr>
+                                                <div class="account-item">
+                                                    <div class="account-role">
+                                                        <span class="a-bold"> 윤용인</span>
+                                                        <span class="relation"> 신부 어머니 </span>
+
+                                                    </div>
+                                                    <div class="account-row">
+                                                        <div class="account-info">
+                                                            <span class="bank-name">농협</span>
+                                                            <span class="account-number">52012269921</span>
+                                                        </div>
+                                                        <div class="btn-action">복사</div>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="remind-wrap">
+
+                    <div>
+                        <div class="text fade-in-section"> November 15th. </div>
+                        <img class="img fade-in-section" src="img/remind.png">
+                        <div class="text-last fade-in-section">2025년 11월 15일 오후 5시 40분 <br> THE VENUEG SEOUL <br> <br> <span> the beginning of forever </span></div>
+                    </div>
+
+                    <!-- 카톡 공유 버튼 -->
+                    <div class="btn-wrap">            
+
+                        <!-- 주소 복사 버튼 -->
+                        <button id="copy-link-btn" class="btn fade-in-section">
+
+                            <span>청첩장 링크 복사하기</span>
+                            <i class="fa-solid fa-link"></i>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="copyright"> @HINO <br> 혜지언니 결혼 축하해</div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <script type="text/javascript" src="java.js"></script>
+
+    <!-- 새로고침 시 항상 위페이지 유지 -->
+    <script>
+        // 페이지 들어올 때 항상 맨 위로
+        window.history.scrollRestoration = "manual";
+
+        window.addEventListener("load", () => {
+            window.scrollTo(0, 0);
+        });
+
+        window.addEventListener("pageshow", function(event) {
+            // 뒤로가기 캐시에서도 맨 위로
+            if (event.persisted) {
+                window.scrollTo(0, 0);
+            }
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 계좌번호 토글 기능 (하나만 열리도록)
+            document.querySelectorAll('.account_number_li').forEach(item => {
+                const title = item.querySelector('.title');
+                title.addEventListener('click', () => {
+                    document.querySelectorAll('.account_number_li').forEach(other => {
+                        if (other !== item) other.classList.remove('open');
+                    });
+                    item.classList.toggle('open');
+                });
+            });
+
+            // 복사 기능
+            document.querySelectorAll('.btn-action').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation(); // 토글 영향 방지
+
+                    const accountInfo = this.closest('.account-row').querySelector('.account-info');
+                    const bank = accountInfo.querySelector('.bank-name').innerText.trim();
+                    const account = accountInfo.querySelector('.account-number').innerText.trim();
+                    const textToCopy = `${bank} ${account}`; // 은행 + 계좌번호
+
+                    copyToClipboard(textToCopy, this);
+                });
+            });
+        });
+
+        // ✅ 크로스 브라우저 복사 함수
+        function copyToClipboard(text, btn) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                // 최신 브라우저
+                navigator.clipboard.writeText(text)
+                    .then(() => showCopied(btn))
+                    .catch(err => fallbackCopy(text, btn));
+            } else {
+                // 구형 브라우저/모바일 fallback
+                fallbackCopy(text, btn);
+            }
+        }
+
+        function fallbackCopy(text, btn) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.style.position = "fixed"; // iOS 대응
+            textarea.style.opacity = "0";
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                if (successful) {
+                    showCopied(btn);
+                } else {
+                    showCopyToast("복사 실패. 직접 복사해주세요.");
+                }
+            } catch (err) {
+                console.error('Fallback 복사 실패:', err);
+                showCopyToast("복사 실패. 직접 복사해주세요.");
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        // ✅ 버튼/토스트 알림
+        function showCopied(btn) {
+            showCopyToast();
+            btn.textContent = '복사됨';
+            setTimeout(() => btn.textContent = '복사', 1500);
+        }
+
+        // ✅ 토스트 메시지
+        function showCopyToast(message = '복사되었습니다!') {
+            const toast = document.getElementById('copy-toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 1500);
+        }
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const tabs = document.querySelectorAll(".tabs span");
+            const groomSection = document.querySelector(".contact-groom");
+            const brideSection = document.querySelector(".contact-bride");
+            const modalContent = document.querySelector(".modal-content01");
+            const contactModal = document.getElementById('contactModal');
+            let scrollY = 0;
+
+            // 탭 전환
+            tabs.forEach(tab => {
+                tab.addEventListener("click", function() {
+                    tabs.forEach(t => t.classList.remove("active"));
+                    this.classList.add("active");
+
+                    if (this.dataset.target === "groom") {
+                        groomSection.classList.add("active");
+                        brideSection.classList.remove("active");
+                    } else {
+                        brideSection.classList.add("active");
+                        groomSection.classList.remove("active");
+                    }
+                });
+            });
+
+            function openModal() {
+                contactModal.style.display = "block";
+                groomSection.classList.add("active");
+                brideSection.classList.remove("active");
+
+                hideAudioBtn(); // 모달 열리면 오디오 버튼 숨김
+
+                scrollY = window.scrollY;
+                document.body.style.position = 'fixed';
+                document.body.style.top = `-${scrollY}px`;
+                document.body.style.width = '100%';
+            }
+
+            function closeModal() {
+                contactModal.style.display = "none";
+
+                showAudioBtn(); // 모달 닫히면 오디오 버튼 다시 보임
+
+                document.body.style.position = '';
+                document.body.style.top = '';
+                document.body.style.width = '';
+                window.scrollTo(0, scrollY);
+            }
+
+            window.openModal = openModal;
+            window.closeModal = closeModal;
+
+            window.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+
+            contactModal.addEventListener('click', (e) => {
+                const modalInner = contactModal.querySelector('.modal-content01');
+                if (!modalInner.contains(e.target)) closeModal();
+            });
+        });
+    </script>
+
+
+    <script>
+        //스톱워치
+        function updateCountdown() {
+            const targetDate = new Date("2025-11-15T17:40:00");
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                document.getElementById("countdown").innerHTML = "00 : 00 : 00 : 00";
+                document.getElementById("daysLeft").textContent = "0";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            document.getElementById("days").textContent = String(days).padStart(2, '0');
+            document.getElementById("hours").textContent = String(hours).padStart(2, '0');
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, '0');
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, '0');
+            document.getElementById("daysLeft").textContent = days;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+
+
+    <script>
+        const audioBtn = document.getElementById("audio-btn");
+
+        // 버튼 숨기기/보이기 함수
+        function hideAudioBtn() {
+            if (audioBtn) audioBtn.style.display = "none";
+        }
+
+        function showAudioBtn() {
+            if (audioBtn) audioBtn.style.display = "block";
+        }
+    </script>
+
+    <script>
+        const galleryImages = [{
+                thumb: './img/thumb/photo1.jpg',
+                full: './img/photo1.webp'
+            },
+            {
+                thumb: './img/thumb/photo2.jpg',
+                full: './img/photo2.webp'
+            },
+            {
+                thumb: './img/thumb/photo3.jpg',
+                full: './img/photo3.webp'
+            },
+            {
+                thumb: './img/thumb/photo4.jpg',
+                full: './img/photo4.webp'
+            },
+            {
+                thumb: './img/thumb/photo5.jpg',
+                full: './img/photo5.webp'
+            },
+            {
+                thumb: './img/thumb/photo6.jpg',
+                full: './img/photo6.webp'
+            },
+            {
+                thumb: './img/thumb/photo7.jpg',
+                full: './img/photo7.webp'
+            },
+            {
+                thumb: './img/thumb/photo8.jpg',
+                full: './img/photo8.webp'
+            },
+            {
+                thumb: './img/thumb/photo9.jpg',
+                full: './img/photo9.webp'
+            },
+            {
+                thumb: './img/thumb/photo10.jpg',
+                full: './img/photo10.webp'
+            },
+            {
+                thumb: './img/thumb/photo11.jpg',
+                full: './img/photo11.webp'
+            },
+            {
+                thumb: './img/thumb/photo12.jpg',
+                full: './img/photo12.webp'
+            }
+        ];
+
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const galleryGrid = document.getElementById('galleryGrid');
+        let currentIndex = 0;
+
+        // 갤러리 렌더
+        function renderGallery(start, count) {
+            const end = Math.min(start + count, galleryImages.length);
+            for (let i = start; i < end; i++) {
+                const item = document.createElement('div');
+                item.className = 'grid-item';
+
+                const img = document.createElement('img');
+                img.src = galleryImages[i].thumb;
+                img.alt = `사진 ${i + 1}`;
+                img.addEventListener('click', () => openGalleryModal(i));
+                item.appendChild(img);
+                galleryGrid.appendChild(item);
+
+                requestAnimationFrame(() => item.classList.add('show'));
+            }
+
+            // 원본 이미지 미리 로드
+            window.addEventListener("load", () => {
+                galleryImages.forEach(imgObj => {
+                    const preload = new Image();
+                    preload.src = imgObj.full;
+                });
+            });
+
+            currentIndex = end;
+            if (currentIndex >= galleryImages.length) showMoreBtn.style.display = 'none';
+        }
+
+        renderGallery(0, 9);
+        showMoreBtn.addEventListener('click', () => renderGallery(currentIndex, 3));
+
+        // Gallery Modal 관련
+        const modal = document.getElementById('galleryModal');
+        const modalImg = document.getElementById('gallery-modal-image');
+        let currentModalIndex = 0;
+        let scrollY = 0;
+
+        function openGalleryModal(index) {
+            currentModalIndex = index;
+            modalImg.src = galleryImages[index].full;
+            modal.classList.add('active');
+
+            hideAudioBtn(); // 모달 열리면 오디오 버튼 숨김
+
+            scrollY = window.scrollY;
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${scrollY}px`;
+            document.body.style.width = '100%';
+
+            updateCounter();
+        }
+
+        function closeGalleryModal() {
+            modal.classList.remove('active');
+
+            showAudioBtn(); // 모달 닫히면 오디오 버튼 다시 보임
+
+            document.body.style.position = '';
+            document.body.style.top = '';
+            document.body.style.width = '';
+            window.scrollTo(0, scrollY);
+        }
+
+        function showGalleryPrev() {
+            currentModalIndex = (currentModalIndex - 1 + galleryImages.length) % galleryImages.length;
+            modalImg.src = galleryImages[currentModalIndex].full;
+            updateCounter();
+        }
+
+        function showGalleryNext() {
+            currentModalIndex = (currentModalIndex + 1) % galleryImages.length;
+            modalImg.src = galleryImages[currentModalIndex].full;
+            updateCounter();
+        }
+
+        function updateCounter() {
+            imageCounter.textContent = `${currentModalIndex + 1} / ${galleryImages.length}`;
+        }
+
+        prevBtn.addEventListener('click', showGalleryPrev);
+        nextBtn.addEventListener('click', showGalleryNext);
+
+        window.addEventListener('keydown', e => {
+            if (e.key === 'Escape') closeGalleryModal();
+        });
+        modal.addEventListener('click', e => {
+            if (e.target === modal) closeGalleryModal();
+        });
+    </script>
+
+
+    <script>
+        /*날짜 나타나기*/
+        document.addEventListener("DOMContentLoaded", function() {
+            const target = document.getElementById("dateWrap");
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    console.log(entry); // ✅ 콘솔 찍어봐!
+                    if (entry.isIntersecting) {
+                        target.classList.add("active");
+                    } else {
+                        target.classList.remove("active");
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            observer.observe(target);
+        });
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const rsvpModal = document.getElementById("rsvpModal");
+            const closeBtn = document.getElementById("closeRsvpModalBtn");
+
+            // 닫기 버튼 클릭 시 모달 숨기기
+            closeBtn.onclick = () => {
+                rsvpModal.classList.add("rsvp-hidden");
+            };
+
+            // ESC 키 누르면 모달 닫기
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    rsvpModal.classList.add("rsvp-hidden");
+                }
+            });
+
+            // 모달 외부 클릭 시 모달 닫기
+            rsvpModal.addEventListener("click", (e) => {
+                const modalContent = rsvpModal.querySelector(".rsvp-modal-content");
+                // 모달 내부 영역이 아니면 닫기
+                if (!modalContent.contains(e.target)) {
+                    rsvpModal.classList.add("rsvp-hidden");
+                }
+            });
+        });
+    </script>
+
+    <script>
+        /*애니메이션*/
+        /* 애니메이션을 반복 트리거하는 JS */
+        document.addEventListener('DOMContentLoaded', () => {
+            const faders = document.querySelectorAll('.fade-in-section');
+
+            const observer = new IntersectionObserver(
+                entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // 화면에 들어오면 활성화
+                            entry.target.classList.add('active');
+                        } else {
+                            // 화면에서 벗어나면 다시 초기화
+                            entry.target.classList.remove('active');
+                        }
+                    });
+                }, {
+                    // 요소의 15% 이상이 보이면 트리거
+                    threshold: 0.15,
+                }
+            );
+
+            faders.forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // fade-in 섹션
+            const faders = document.querySelectorAll('.fade-in-section');
+            const faderObserver = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    } else {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, {
+                threshold: 0.15
+            });
+
+            faders.forEach(el => faderObserver.observe(el));
+
+            // line.gif → 혜지 보이면 켜지고, 진원 안 보이면 꺼지도록
+            const hyeji = document.querySelector('.hyeji');
+            const jinwon = document.querySelector('.jinwon');
+            const lineBg = document.querySelector('.line-bg');
+
+            if (hyeji && jinwon && lineBg) {
+                let gifTimeout;
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        // 혜지가 보이면 gif 켜기
+                        if (entry.target === hyeji && entry.isIntersecting) {
+                            gifTimeout = setTimeout(() => {
+                                lineBg.classList.add('active');
+                            }, 700);
+                        }
+
+                        // 진원이 안 보이면 gif 끄기
+                        if (entry.target === jinwon && !entry.isIntersecting) {
+                            clearTimeout(gifTimeout);
+                            lineBg.classList.remove('active');
+                        }
+                    });
+                }, {
+                    threshold: 0.4
+                });
+
+                observer.observe(hyeji);
+                observer.observe(jinwon);
+            }
+        });
+    </script>
+
+
+    <!--  확대 제어-->
+    <script>
+        // 마우스 휠 + Ctrl 방지 (데스크톱)
+        window.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, {
+            passive: false
+        });
+
+        // 키보드 단축키 Ctrl + '+', Ctrl + '-' 방지
+        window.addEventListener('keydown', function(e) {
+            if (e.ctrlKey && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+
+        // 터치스크린 핀치 방지 (모바일)
+        window.addEventListener('gesturestart', function(e) {
+            e.preventDefault();
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const audioBtn = document.getElementById("audio-btn");
+            const audio = new Audio("./bgm/audio1.mp3");
+            let isPlaying = false;
+            audioBtn.classList.add("visible");
+            audio.play().then(() => {
+                isPlaying = true;
+                audioBtn.src = "./img/audio-off.png";
+            }).catch(() => {
+                console.log("모바일 자동재생 차단, 첫 제스처에서 재생");
+            });
+
+            function initAudio() {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    audioBtn.src = "./img/audio-off.png";
+                }).catch(err => console.log("재생 실패:", err));
+                document.removeEventListener("touchstart", initAudio);
+                document.removeEventListener("click", initAudio);
+                document.removeEventListener("scroll", initAudio);
+            }
+            document.addEventListener("touchstart", initAudio, {
+                once: true
+            });
+            document.addEventListener("click", initAudio, {
+                once: true
+            });
+            document.addEventListener("scroll", initAudio, {
+                once: true
+            });
+            audioBtn.addEventListener("click", () => {
+                if (isPlaying) {
+                    audio.pause();
+                    audioBtn.src = "./img/audio.png";
+                } else {
+                    audio.play().catch(err => console.log("재생 실패:", err));
+                    audioBtn.src = "./img/audio-off.png";
+                }
+                isPlaying = !isPlaying;
+            });
+            const contactModal = document.getElementById("contactModal");
+            const galleryModal = document.getElementById("galleryModal");
+
+            function hideAudioBtn() {
+                audioBtn.style.display = "none";
+            }
+
+            function showAudioBtn() {
+                audioBtn.style.display = "block";
+            }
+            if (contactModal) {
+                contactModal.addEventListener('show.bs.modal', hideAudioBtn);
+                contactModal.addEventListener('hidden.bs.modal', showAudioBtn);
+            }
+            if (galleryModal) {
+                galleryModal.addEventListener('show.bs.modal', hideAudioBtn);
+                galleryModal.addEventListener('hidden.bs.modal', showAudioBtn);
+            }
+        });
+    </script>
+
+
+    <!-- 주소복사 -->
+    <!-- location부분 주소 누르면 복사 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // 📌 Location 주소 복사
+            document.querySelectorAll(".address-copy").forEach(el => {
+                el.addEventListener("click", function() {
+                    const text = this.querySelector(".address-text").innerText.trim();
+                    copyFallback(text, "주소가 복사되었습니다!");
+                });
+            });
+
+            // 📌 청첩장 링크 복사
+            document.getElementById("copy-link-btn").addEventListener("click", function() {
+                copyFallback("https://www.hyejinwon.com/", "청첩장 링크가 복사되었습니다!");
+            });
+        });
+
+        // ───── Fallback 복사 함수 ─────
+        function copyFallback(text, msg) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.setAttribute("readonly", ""); // 모바일 키보드 방지
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            textarea.setSelectionRange(0, textarea.value.length); // iOS 대응
+
+            try {
+                const successful = document.execCommand("copy");
+                if (successful) {
+                    showCopyToast(msg);
+                } else {
+                    showCopyToast("복사 실패. 직접 복사해주세요.");
+                }
+            } catch (err) {
+                console.error("Fallback 복사 실패:", err);
+                showCopyToast("복사 실패. 직접 복사해주세요.");
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        // ───── 토스트 표시 ─────
+        function showCopyToast(message = "복사되었습니다!") {
+            const toast = document.getElementById("copy-toast");
+            toast.textContent = message;
+            toast.classList.add("show");
+            setTimeout(() => toast.classList.remove("show"), 1500);
+        }
+    </script>
+
+    <!-- 확대 방지 -->
+    <script>
+        document.addEventListener('touchstart', function(event) {
+            if (event.touches.length > 1) {
+                event.preventDefault(); // 두 손가락 확대 방지
+            }
+        }, {
+            passive: false
+        });
+
+        document.addEventListener('gesturestart', function(event) {
+            event.preventDefault(); // iOS 확대 방지
+        });
+    </script>
+
+
+
+
+    <div id="copy-toast" class="copy-toast">복사되었습니다!</div> <!-- 복사 알림 -->
+
+</body></html>
